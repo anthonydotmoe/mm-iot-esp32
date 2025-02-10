@@ -75,10 +75,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "GETTING_STARTED.html",
-"group__MMHAL__WLAN__SPI.html#ga8f248d785042a9fb4585dd75d286ceac",
-"group__MMWLAN.html#gad4799bcbe9ac956813798fcecffc5a15",
-"mmpkt_8h_source.html",
-"structmmwlan__standby__config.html#ae02c93c90eb3aa389f5e5fefc13f34f0"
+"group__MMHAL__WLAN__SPI.html#ga7b62aa7ada85830f602f1ed5f65ee562",
+"group__MMWLAN.html#gab3eb6b84d66a2bac936052645f431015",
+"structmbin__regdom__hdr.html#a198c657c31c9ad4baf50bea71e0dc5ba",
+"structmmwlan__standby__set__status__payload__args.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

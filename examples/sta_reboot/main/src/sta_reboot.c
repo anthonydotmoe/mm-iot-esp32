@@ -21,12 +21,12 @@
 #include "mmhal.h"
 #include "mmosal.h"
 #include "mmwlan.h"
-#include "mmwlan_regdb.def"
+#include "mm_app_regdb.h"
 
 // #define COUNTRY_CODE "AU"
 #ifndef COUNTRY_CODE
 #error COUNTRY_CODE must be defined to the appropriate 2 character country code. \
-       See mmwlan_regdb.def for valid options.
+       See mm_app_regdb.c for valid options.
 #endif
 
 /** SSID of the AP to connect to. */

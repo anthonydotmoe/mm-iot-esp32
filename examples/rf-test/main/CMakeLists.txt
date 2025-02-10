@@ -1,4 +1,5 @@
 set(src
+    "src/mm_app_regdb.c"
     "src/rf-test.c"
     "src/mmhal_uart.c")
 

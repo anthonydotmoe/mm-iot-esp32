@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"group__MMHAL__WLAN__SPI.html#ga7b62aa7ada85830f602f1ed5f65ee562":[6,0,1,0,5],
+"group__MMHAL__WLAN__SPI.html#ga7bd3a7a6db08bebd598160a309096fdd":[6,0,1,0,10],
 "group__MMHAL__WLAN__SPI.html#ga8f248d785042a9fb4585dd75d286ceac":[6,0,1,0,0],
 "group__MMHAL__WLAN__SPI.html#gaa14be7bc70441f429e361cb5ce9d188f":[6,0,1,0,6],
 "group__MMHAL__WLAN__SPI.html#gaad912b080dc42cda5d2aa10194546044":[6,0,1,0,4],
@@ -234,20 +236,18 @@ var NAVTREEINDEX1 =
 "group__MMUTILS__WLAN.html#ggae98527562e222107d8f37d2df569767ea475d87d745b5b57e0f4560d50a03245c":[6,6,0,6,1],
 "group__MMUTILS__WLAN.html#ggae98527562e222107d8f37d2df569767ea95796d1751b1bb3dfbbba1044801becd":[6,6,0,6,0],
 "group__MMWLAN.html":[6,4],
-"group__MMWLAN.html#ga0039072000d47e5c3712686bf1e43086":[6,4,28],
-"group__MMWLAN.html#ga240c532e1ff898c69904c2dd2e346b11":[6,4,19],
+"group__MMWLAN.html#ga0039072000d47e5c3712686bf1e43086":[6,4,30],
+"group__MMWLAN.html#ga07a32b3e9fb8b76fe4029cb20dc1af57":[6,4,17],
+"group__MMWLAN.html#ga240c532e1ff898c69904c2dd2e346b11":[6,4,21],
 "group__MMWLAN.html#ga2a5c4c585eae555f4d5b0c3304e5e9e4":[6,4,15],
 "group__MMWLAN.html#ga2cef4cdfd533a16d04030551141a0c47":[6,4,13],
+"group__MMWLAN.html#ga4dc834cad2f429484a5eb050c833fb65":[6,4,16],
 "group__MMWLAN.html#ga4f44eca015ebb4124bf45c4cd50192fb":[6,4,14],
-"group__MMWLAN.html#ga6f1e10b52468bc91ff773e96377bfa17":[6,4,25],
+"group__MMWLAN.html#ga6f1e10b52468bc91ff773e96377bfa17":[6,4,27],
 "group__MMWLAN.html#ga71b8f7f48139c1d7a8ac8b20537c36de":[6,4,11],
-"group__MMWLAN.html#ga84f1a76137b3e5d01dd0942e2c4ee564":[6,4,22],
-"group__MMWLAN.html#ga8e0c9525afa90a775d251a7dd785cb92":[6,4,17],
+"group__MMWLAN.html#ga84f1a76137b3e5d01dd0942e2c4ee564":[6,4,24],
+"group__MMWLAN.html#ga8e0c9525afa90a775d251a7dd785cb92":[6,4,19],
 "group__MMWLAN.html#ga948c41a1da6f011db6141b29d188fca8":[6,4,12],
-"group__MMWLAN.html#gaa1811e3233be70cf35a4611111eddca0":[6,4,27],
-"group__MMWLAN.html#gaa9382290cddb08f42b62119a898c77de":[6,4,18],
-"group__MMWLAN.html#gab3eb6b84d66a2bac936052645f431015":[6,4,21],
-"group__MMWLAN.html#gac9069b1c24fa4b7cb160fd45de3de248":[6,4,20],
-"group__MMWLAN.html#gacacf7f8ff268c397c2938a751857afc1":[6,4,30],
-"group__MMWLAN.html#gad1f02bb330d9d2f4c831a1cf9d44ff1a":[6,4,16]
+"group__MMWLAN.html#gaa1811e3233be70cf35a4611111eddca0":[6,4,29],
+"group__MMWLAN.html#gaa9382290cddb08f42b62119a898c77de":[6,4,20]
 };

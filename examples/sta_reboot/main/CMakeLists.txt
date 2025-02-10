@@ -1,4 +1,6 @@
-set(src "src/sta_reboot.c")
+set(src
+    "src/mm_app_regdb.c"
+    "src/sta_reboot.c")
 
 idf_component_register(SRCS ${src}
                        PRIV_REQUIRES driver morselib mm_shims)

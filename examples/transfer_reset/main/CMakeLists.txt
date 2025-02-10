@@ -1,6 +1,7 @@
 set(src
     "src/mm_app_loadconfig.c"
     "src/mm_app_common.c"
+    "src/mm_app_regdb.c"
     "src/transfer_reset.c")
 
 set(inc

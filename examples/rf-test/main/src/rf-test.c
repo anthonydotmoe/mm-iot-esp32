@@ -31,13 +31,13 @@
 #include "mmosal.h"
 #include "mmutils.h"
 #include "mmwlan.h"
-#include "mmwlan_regdb.def"
+#include "mm_app_regdb.h"
 #include "slip.h"
 
 // #define COUNTRY_CODE "AU"
 #ifndef COUNTRY_CODE
 #error COUNTRY_CODE must be defined to the appropriate 2 character country code. \
-       See mmwlan_regdb.def for valid options.
+       See mm_app_regdb.c for valid options.
 #endif
 
 /** Length of the sequence number field appended to command/response packets. */
