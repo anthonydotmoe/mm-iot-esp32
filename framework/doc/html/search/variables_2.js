@@ -10,5 +10,8 @@ var searchData=
   ['chip_5fpowerdown_5fenabled_7',['chip_powerdown_enabled',['../structmmwlan__set__wnm__sleep__enabled__args.html#a64b5fbce597c0860ed0e715b90a803c0',1,'mmwlan_set_wnm_sleep_enabled_args']]],
   ['chunk_5fsize_8',['chunk_size',['../structmbin__deflated__segment__hdr.html#a4db6aae785999514a9841a3a9f84fdab',1,'mbin_deflated_segment_hdr']]],
   ['cmd_9',['cmd',['../unionmmpkt__metadata__ptr.html#ab4242efa9637d9a7e22723d925668c59',1,'mmpkt_metadata_ptr']]],
-  ['country_5fcode_10',['country_code',['../structmbin__regdom__hdr.html#a198c657c31c9ad4baf50bea71e0dc5ba',1,'mbin_regdom_hdr::country_code()'],['../structmmwlan__s1g__channel__list.html#a7f72b6a918f5621a0709f87bfb8c9efc',1,'mmwlan_s1g_channel_list::country_code()']]]
+  ['connect_5ftimestamp_10',['connect_timestamp',['../structmmwlan__stats__umac__data.html#ada5d8a8c8ecc9824a2292256266d959e',1,'mmwlan_stats_umac_data']]],
+  ['country_5fcode_11',['country_code',['../structmbin__regdom__hdr.html#a198c657c31c9ad4baf50bea71e0dc5ba',1,'mbin_regdom_hdr::country_code()'],['../structmmwlan__s1g__channel__list.html#a7f72b6a918f5621a0709f87bfb8c9efc',1,'mmwlan_s1g_channel_list::country_code()']]],
+  ['cw_5fmax_12',['cw_max',['../structmmwlan__qos__queue__params.html#af8dc64b2aff22ab5237326b5e6f847a2',1,'mmwlan_qos_queue_params']]],
+  ['cw_5fmin_13',['cw_min',['../structmmwlan__qos__queue__params.html#ad652c2d94f6afaa0fcb1bdb77a57d329',1,'mmwlan_qos_queue_params']]]
 ];

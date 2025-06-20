@@ -305,6 +305,46 @@ static void scan_complete_callback(enum mmwlan_scan_state state, void *arg)
     printf("Scanning completed.\n");
 }
 
+void app_print_version_info(void)
+{
+    enum mmwlan_status status;
+    struct mmwlan_version version;
+    struct mmwlan_bcf_metadata bcf_metadata;
+
+    printf("-----------------------------------\n");
+
+    status = mmwlan_get_bcf_metadata(&bcf_metadata);
+    if (status == MMWLAN_SUCCESS)
+    {
+        printf("  BCF API version:         %u.%u.%u\n",
+               bcf_metadata.version.major, bcf_metadata.version.minor, bcf_metadata.version.patch);
+        if (bcf_metadata.build_version[0] != '\0')
+        {
+            printf("  BCF build version:       %s\n", bcf_metadata.build_version);
+        }
+        if (bcf_metadata.board_desc[0] != '\0')
+        {
+            printf("  BCF board description:   %s\n", bcf_metadata.board_desc);
+        }
+    }
+    else
+    {
+        printf("  !! BCF metadata retrival failed !!\n");
+    }
+
+    status = mmwlan_get_version(&version);
+    if (status != MMWLAN_SUCCESS)
+    {
+        printf("  !! Error occured whilst retrieving version info !!\n");
+    }
+    printf("  Morselib version:        %s\n", version.morselib_version);
+    printf("  Morse firmware version:  %s\n", version.morse_fw_version);
+    printf("  Morse chip ID:           0x%04lx\n", version.morse_chip_id);
+    printf("-----------------------------------\n");
+
+    MMOSAL_ASSERT(status == MMWLAN_SUCCESS);
+}
+
 /**
  * Main entry point to the application. This will be invoked in a thread once operating system
  * and hardware initialization has completed. It may return, but it does not have to.
@@ -335,14 +375,10 @@ void app_main(void)
         MMOSAL_ASSERT(false);
     }
 
+    /* Boot the WLAN interface so that we can retrieve the firmware version. */
     struct mmwlan_boot_args boot_args = MMWLAN_BOOT_ARGS_INIT;
-    status = mmwlan_boot(&boot_args);
-    MMOSAL_ASSERT(status == MMWLAN_SUCCESS);
-
-    status = mmwlan_get_version(&version);
-    MMOSAL_ASSERT(status == MMWLAN_SUCCESS);
-    printf("Morse firmware version %s, morselib version %s, Morse chip ID 0x%lx\n\n",
-           version.morse_fw_version, version.morselib_version, version.morse_chip_id);
+    (void)mmwlan_boot(&boot_args);
+    app_print_version_info();
 
     num_scan_results = 0;
     struct mmwlan_scan_req scan_req = MMWLAN_SCAN_REQ_INIT;

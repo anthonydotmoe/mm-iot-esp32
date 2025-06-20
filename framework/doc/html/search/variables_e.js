@@ -11,7 +11,7 @@ var searchData=
   ['retry_5fcount_8',['retry_count',['../structmmwlan__tcp__keepalive__offload__args.html#af279341b129671d5f8213bf977cae1cb',1,'mmwlan_tcp_keepalive_offload_args']]],
   ['retry_5finterval_5fs_9',['retry_interval_s',['../structmmwlan__tcp__keepalive__offload__args.html#a75bb616d0869213d7f4116beb5dcad91',1,'mmwlan_tcp_keepalive_offload_args']]],
   ['rsn_5fcapabilities_10',['rsn_capabilities',['../structmm__rsn__information.html#a8409a05509c9ec9a2cd7f074de2403e9',1,'mm_rsn_information']]],
-  ['rssi_11',['rssi',['../structmmwlan__scan__result.html#a58f987e3e1c06fd951a18311ac75d87b',1,'mmwlan_scan_result']]],
+  ['rssi_11',['rssi',['../structmmwlan__scan__result.html#a58f987e3e1c06fd951a18311ac75d87b',1,'mmwlan_scan_result::rssi()'],['../structmmwlan__stats__umac__data.html#a8f162036d07ff09d23812af97ed32e33',1,'mmwlan_stats_umac_data::rssi()']]],
   ['rx_12',['rx',['../unionmmpkt__metadata__ptr.html#a08d40e4cd9afa48769aa03087b1c2c95',1,'mmpkt_metadata_ptr']]],
   ['rx_5fframes_13',['rx_frames',['../structmmiperf__report.html#a930bcd812a17a111162625b77dc67464',1,'mmiperf_report']]]
 ];

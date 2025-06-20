@@ -16,5 +16,6 @@ var searchData=
   ['tx_13',['tx',['../unionmmpkt__metadata__ptr.html#a74c109b55aeb4a6d25f4744c7c4e1b85',1,'mmpkt_metadata_ptr']]],
   ['tx_5fflow_5fcontrol_5fcb_14',['tx_flow_control_cb',['../structmmhal__wlan__pktmem__init__args.html#a0fad02ebf4e2120c9fe04f0c226990a4',1,'mmhal_wlan_pktmem_init_args']]],
   ['tx_5fframes_15',['tx_frames',['../structmmiperf__report.html#ae6f8f0fdc17c77d8e8e4987343512081',1,'mmiperf_report']]],
-  ['type_16',['type',['../structmbin__tlv__hdr.html#acdf5a55bc4057b67582e3e45f0bab180',1,'mbin_tlv_hdr']]]
+  ['txop_5fmax_5fus_16',['txop_max_us',['../structmmwlan__qos__queue__params.html#a8ccffd8fbab6955b1af8bfa9f05731d1',1,'mmwlan_qos_queue_params']]],
+  ['type_17',['type',['../structmbin__tlv__hdr.html#acdf5a55bc4057b67582e3e45f0bab180',1,'mbin_tlv_hdr']]]
 ];

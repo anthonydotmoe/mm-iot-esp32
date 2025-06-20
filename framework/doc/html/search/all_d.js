@@ -14,5 +14,7 @@ var searchData=
   ['period_5fs_11',['period_s',['../structmmwlan__tcp__keepalive__offload__args.html#a50df63ae9b386bb04de1c5f8163b1103',1,'mmwlan_tcp_keepalive_offload_args']]],
   ['pkt_5fspacing_5fus_12',['pkt_spacing_us',['../structmmwlan__s1g__channel.html#ad7f9820f7f7a5ca14956351e4af683af',1,'mmwlan_s1g_channel']]],
   ['platform_5finfo_13',['platform_info',['../structmmosal__failure__info.html#af79798ad1c78868c7262b5bb5013e633',1,'mmosal_failure_info']]],
-  ['pmf_5fmode_14',['pmf_mode',['../structmmwlan__sta__args.html#a5f424a8f2c9ea4906a99fcc87dc5553f',1,'mmwlan_sta_args']]]
+  ['pmf_5fmode_14',['pmf_mode',['../structmmwlan__sta__args.html#a5f424a8f2c9ea4906a99fcc87dc5553f',1,'mmwlan_sta_args']]],
+  ['primary_5fchannel_5fnumber_15',['primary_channel_number',['../structmm__s1g__operation.html#aa5fb23e1b2bf0fb22d82a02d07517bcb',1,'mm_s1g_operation']]],
+  ['primary_5fchannel_5fwidth_5fmhz_16',['primary_channel_width_mhz',['../structmm__s1g__operation.html#a1a51c442a5ac11bbaa20e39557507605',1,'mm_s1g_operation']]]
 ];

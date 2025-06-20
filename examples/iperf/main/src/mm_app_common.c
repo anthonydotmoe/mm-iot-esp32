@@ -66,6 +66,46 @@ static void link_status_callback(const struct mmipal_link_status *link_status)
     }
 }
 
+void app_print_version_info(void)
+{
+    enum mmwlan_status status;
+    struct mmwlan_version version;
+    struct mmwlan_bcf_metadata bcf_metadata;
+
+    printf("-----------------------------------\n");
+
+    status = mmwlan_get_bcf_metadata(&bcf_metadata);
+    if (status == MMWLAN_SUCCESS)
+    {
+        printf("  BCF API version:         %u.%u.%u\n",
+               bcf_metadata.version.major, bcf_metadata.version.minor, bcf_metadata.version.patch);
+        if (bcf_metadata.build_version[0] != '\0')
+        {
+            printf("  BCF build version:       %s\n", bcf_metadata.build_version);
+        }
+        if (bcf_metadata.board_desc[0] != '\0')
+        {
+            printf("  BCF board description:   %s\n", bcf_metadata.board_desc);
+        }
+    }
+    else
+    {
+        printf("  !! BCF metadata retrival failed !!\n");
+    }
+
+    status = mmwlan_get_version(&version);
+    if (status != MMWLAN_SUCCESS)
+    {
+        printf("  !! Error occured whilst retrieving version info !!\n");
+    }
+    printf("  Morselib version:        %s\n", version.morselib_version);
+    printf("  Morse firmware version:  %s\n", version.morse_fw_version);
+    printf("  Morse chip ID:           0x%04lx\n", version.morse_chip_id);
+    printf("-----------------------------------\n");
+
+    MMOSAL_ASSERT(status == MMWLAN_SUCCESS);
+}
+
 void app_wlan_init(void)
 {
     enum mmwlan_status status;
@@ -80,6 +120,11 @@ void app_wlan_init(void)
     mmwlan_init();
 
     mmwlan_set_channel_list(load_channel_list());
+
+    /* Boot the WLAN interface so that we can retrieve the firmware version. */
+    struct mmwlan_boot_args boot_args = MMWLAN_BOOT_ARGS_INIT;
+    (void)mmwlan_boot(&boot_args);
+    app_print_version_info();
 
     /* Load IP stack settings from config store, or use defaults if no entry found in
      * config store. */

@@ -213,6 +213,45 @@ static void uart_rx_handler(const uint8_t *data, size_t length, void *arg)
     }
 }
 
+void app_print_version_info(void)
+{
+    enum mmwlan_status status;
+    struct mmwlan_version version;
+    struct mmwlan_bcf_metadata bcf_metadata;
+
+    printf("-----------------------------------\n");
+
+    status = mmwlan_get_bcf_metadata(&bcf_metadata);
+    if (status == MMWLAN_SUCCESS)
+    {
+        printf("  BCF API version:         %u.%u.%u\n",
+               bcf_metadata.version.major, bcf_metadata.version.minor, bcf_metadata.version.patch);
+        if (bcf_metadata.build_version[0] != '\0')
+        {
+            printf("  BCF build version:       %s\n", bcf_metadata.build_version);
+        }
+        if (bcf_metadata.board_desc[0] != '\0')
+        {
+            printf("  BCF board description:   %s\n", bcf_metadata.board_desc);
+        }
+    }
+    else
+    {
+        printf("  !! BCF metadata retrival failed !!\n");
+    }
+
+    status = mmwlan_get_version(&version);
+    if (status != MMWLAN_SUCCESS)
+    {
+        printf("  !! Error occured whilst retrieving version info !!\n");
+    }
+    printf("  Morselib version:        %s\n", version.morselib_version);
+    printf("  Morse firmware version:  %s\n", version.morse_fw_version);
+    printf("  Morse chip ID:           0x%04lx\n", version.morse_chip_id);
+    printf("-----------------------------------\n");
+
+    MMOSAL_ASSERT(status == MMWLAN_SUCCESS);
+}
 
 /** Buffer for SLIP processing on receive path. */
 static uint8_t slip_rx_buffer[SLIP_RX_BUFFER_SIZE];
@@ -227,7 +266,6 @@ static struct slip_rx_state rx_slip_state =
  */
 enum mmwlan_status mmwlan_start(void)
 {
-    struct mmwlan_version version;
     enum mmwlan_status status;
     const struct mmwlan_s1g_channel_list* channel_list;
 
@@ -250,23 +288,10 @@ enum mmwlan_status mmwlan_start(void)
         return status;
     }
 
+    /* Boot the WLAN interface so that we can retrieve the firmware version. */
     struct mmwlan_boot_args boot_args = MMWLAN_BOOT_ARGS_INIT;
-    status = mmwlan_boot(&boot_args);
-    if (status != MMWLAN_SUCCESS)
-    {
-        printf("Failed to boot the WLAN interface\n");
-        return status;
-    }
-
-    status = mmwlan_get_version(&version);
-    if (status != MMWLAN_SUCCESS)
-    {
-        printf("Failed retrieve versions information\n");
-        return status;
-    }
-
-    printf("Morse firmware version %s, morselib version %s, Morse chip ID 0x%lx\n\n",
-           version.morse_fw_version, version.morselib_version, version.morse_chip_id);
+    (void)mmwlan_boot(&boot_args);
+    app_print_version_info();
 
     return MMWLAN_SUCCESS;
 }

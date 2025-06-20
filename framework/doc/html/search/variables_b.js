@@ -10,5 +10,6 @@ var searchData=
   ['num_5fakm_5fsuites_7',['num_akm_suites',['../structmm__rsn__information.html#a00217f418a9dd0b8a645eec008cdad60',1,'mm_rsn_information']]],
   ['num_5fchannels_8',['num_channels',['../structmmwlan__s1g__channel__list.html#a304668da99697bd8381ff592fb05040a',1,'mmwlan_s1g_channel_list']]],
   ['num_5fdomains_9',['num_domains',['../structmmwlan__regulatory__db.html#a4220aee7b4089dd3e817d34441df8fcd',1,'mmwlan_regulatory_db']]],
-  ['num_5fpairwise_5fcipher_5fsuites_10',['num_pairwise_cipher_suites',['../structmm__rsn__information.html#a86df56520b770f1153a799506bb5985f',1,'mm_rsn_information']]]
+  ['num_5fpairwise_5fcipher_5fsuites_10',['num_pairwise_cipher_suites',['../structmm__rsn__information.html#a86df56520b770f1153a799506bb5985f',1,'mm_rsn_information']]],
+  ['num_5fscans_5fcomplete_11',['num_scans_complete',['../structmmwlan__stats__umac__data.html#a823370d0202b2975843237953563819d',1,'mmwlan_stats_umac_data']]]
 ];

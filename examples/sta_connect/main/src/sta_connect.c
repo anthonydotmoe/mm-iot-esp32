@@ -89,6 +89,46 @@ static void sta_status_handler(enum mmwlan_sta_state sta_state)
     printf("STA state: %s (%u)\n", sta_state_desc[sta_state], sta_state);
 }
 
+void app_print_version_info(void)
+{
+    enum mmwlan_status status;
+    struct mmwlan_version version;
+    struct mmwlan_bcf_metadata bcf_metadata;
+
+    printf("-----------------------------------\n");
+
+    status = mmwlan_get_bcf_metadata(&bcf_metadata);
+    if (status == MMWLAN_SUCCESS)
+    {
+        printf("  BCF API version:         %u.%u.%u\n",
+               bcf_metadata.version.major, bcf_metadata.version.minor, bcf_metadata.version.patch);
+        if (bcf_metadata.build_version[0] != '\0')
+        {
+            printf("  BCF build version:       %s\n", bcf_metadata.build_version);
+        }
+        if (bcf_metadata.board_desc[0] != '\0')
+        {
+            printf("  BCF board description:   %s\n", bcf_metadata.board_desc);
+        }
+    }
+    else
+    {
+        printf("  !! BCF metadata retrival failed !!\n");
+    }
+
+    status = mmwlan_get_version(&version);
+    if (status != MMWLAN_SUCCESS)
+    {
+        printf("  !! Error occured whilst retrieving version info !!\n");
+    }
+    printf("  Morselib version:        %s\n", version.morselib_version);
+    printf("  Morse firmware version:  %s\n", version.morse_fw_version);
+    printf("  Morse chip ID:           0x%04lx\n", version.morse_chip_id);
+    printf("-----------------------------------\n");
+
+    MMOSAL_ASSERT(status == MMWLAN_SUCCESS);
+}
+
 /**
  * Main entry point to the application. This will be invoked in a thread once operating system
  * and hardware initialization has completed. It may return, but it does not have to.
@@ -96,7 +136,6 @@ static void sta_status_handler(enum mmwlan_sta_state sta_state)
 void app_main(void)
 {
     enum mmwlan_status status;
-    struct mmwlan_version version;
     struct mmwlan_sta_args sta_args = MMWLAN_STA_ARGS_INIT;
     const struct mmwlan_s1g_channel_list* channel_list;
     uint8_t mac_addr[MMWLAN_MAC_ADDR_LEN];
@@ -146,26 +185,11 @@ void app_main(void)
         MMOSAL_ASSERT(false);
     }
 
-    /* Boot the transceiver so that we can read the version info and MAC address. */
+    /* Boot the WLAN interface so that we can retrieve the firmware version. */
     struct mmwlan_boot_args boot_args = MMWLAN_BOOT_ARGS_INIT;
-    status = mmwlan_boot(&boot_args);
-    if (status != MMWLAN_SUCCESS)
-    {
-        printf("Boot failed with code %d\n", status);
-        MMOSAL_ASSERT(false);
-    }
+    (void)mmwlan_boot(&boot_args);
+    app_print_version_info();
 
-    /* Read and display version information. */
-    status = mmwlan_get_version(&version);
-    if (status != MMWLAN_SUCCESS)
-    {
-        printf("Failed to get version\n");
-        MMOSAL_ASSERT(false);
-    }
-    printf("Morse firmware version %s, morselib version %s, Morse chip ID 0x%lx\n\n",
-           version.morse_fw_version, version.morselib_version, version.morse_chip_id);
-
-    /* Read and display MAC address. */
     status = mmwlan_get_mac_addr(mac_addr);
     if (status != MMWLAN_SUCCESS)
     {
