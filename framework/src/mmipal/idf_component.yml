@@ -3,7 +3,7 @@
 
 dependencies:
     idf:
-        version: "==5.1.1"
+        version: ">=5.1.1"
     mmutils:
         version: "==2.8.2-esp32"
         path: ../mmutils
