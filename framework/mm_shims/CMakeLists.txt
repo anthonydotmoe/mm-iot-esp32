@@ -16,7 +16,10 @@ set(FW_MBIN "${CMAKE_CURRENT_LIST_DIR}/../morsefirmware/mm6108.mbin")
 set(FW_OBJ "${FW_MBIN}.o")
 
 # Kconfig variables are used to determine which bcf file to add to the final application
-if(CONFIG_MM_BCF_MF08651_US)
+if(CONFIG_MM_BCF_MF16858_US)
+    message(STATUS "Using BCF for MM6108_MF16858_US")
+    set(BCF_MBIN "${CMAKE_CURRENT_LIST_DIR}/../morsefirmware/bcf_mf16858_us.mbin")
+elseif(CONFIG_MM_BCF_MF08651_US)
     message(STATUS "Using BCF for MM6108_MF08651_US")
     set(BCF_MBIN "${CMAKE_CURRENT_LIST_DIR}/../morsefirmware/bcf_mf08651_us.mbin")
 elseif(CONFIG_MM_BCF_MF08551)
